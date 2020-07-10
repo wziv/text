@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="fesco运营业务系统">
+    <meta name="description" content="fesco运营业务系统">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>fesco运营业务系统</title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <link href="/" rel="shortcut icon">
+    <link href="./resources/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="./resources/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="./resources/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="./resources/css/animate.min.css" rel="stylesheet">
+    <link href="./resources/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="./resources/plugins/jquery-layout/jquery.layout-latest.css" rel="stylesheet">
+    <!--zThree样式黄图标-->
+    <!--<link href="/resources/plugins/zTree_v3/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" >-->
+    <!--zThree样式黑图标-->
+    <link href="./resources/plugins/zTree_v3/css/metroStyle/metroStyle.css" rel="stylesheet">
+    <link href="./resources/js/plugins/layer/skin/layer.css" rel="stylesheet">
+    <!-- bootstrap-table 表格插件样式 -->
+    <link href="./resources/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" t="">
+    <link href="./resources/plugins/bootstrap-table/extensions/columns/bootstrap-table-fixed-columns.css" rel="stylesheet">
+    <link href="./resources/plugins/bootstrap-treetable/bootstrap-treetable.css" rel="stylesheet">
+    <link href="./css/miller-ui.css" rel="stylesheet">
+    <link href="./resources/plugins/select/select2.css" rel="stylesheet">
+    <link href="./resources/plugins/comboTree/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://openapi.feser.com.cn/resources/js/plugins/layer/skin/layer.css" id="layui_layer_skinlayercss" style="">
+    <link rel="stylesheet" href="https://openapi.feser.com.cn/resources/js/plugins/layer/skin/moon/style.css" id="layui_layer_skinmoonstylecss" style="">
+    <link href="./resources/js/plugins/layer/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://openapi.feser.com.cn/resources/js/plugins/layer/skin/layer.ext.css" id="layui_layer_skinlayerextcss" style="">
+</head>
+
+<body class="gray-bg  ui-layout-container pace-done" style="overflow: hidden; width: auto; height: auto; margin: 0px; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <div class="container-div ui-layout-center ui-layout-pane ui-layout-pane-center" style="position: absolute; margin: 0px; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 1009px; width: 1180px; z-index: 0; display: block; visibility: visible;">
+        <div class="row">
+            <div class="col-sm-12 search-collapse" style="padding-bottom: 5px;">
+                <h3 style="margin-top: 12px;font-weight:normal;float: left;">发放列表</h3>
+                <form id="integral">
+                    <input type="hidden" id="orgDeptId" name="deptId" value="">
+                    <div class="select-list" style="float: right;">
+                        <ul>
+                            <li style="margin-right: 3px;">
+                                <input class="Wdate" type="text" style="width: 130px" placeholder="请选择开始时间" id="keyDate" name="keyDate" value="" onclick="WdatePicker({readOnly:true, lang:'zh-cn', dateFmt:'yyyy-MM-dd'})" readonly="readonly">
+                            </li>
+                            <li style="margin-right: 3px;">
+                                <input class="Wdate" type="text" style="width: 130px" placeholder="请选择结束时间" id="keyDateEnd" name="keyDateEnd" value="" onclick="WdatePicker({readOnly:true, lang:'zh-cn', dateFmt:'yyyy-MM-dd'})" readonly="readonly">
+                            </li>
+                            <li style="margin-right: 3px;">
+                                <div id="comboTree298675Wrapper" class="comboTreeWrapper">
+                                    <div id="comboTree298675InputWrapper" class="comboTreeInputWrapper">
+                                        <input type="text" id="orgDept" placeholder="请选择组织架构" autocomplete="off" class="comboTreeInputBox">
+                                        <div id="comboTree298675ArrowBtn" class="comboTreeArrowBtn"><span class="comboTreeArrowBtnImg">▼</span></div>
+                                    </div>
+                                    <div id="comboTree298675DropDownContainer" class="comboTreeDropDownContainer">
+                                        <input id="comboTree298675MultiFilter" type="text" class="multiplesFilter" placeholder="输入过滤条件">
+                                        <ul>
+                                            <li><span class="comboTreeParentPlus" style="display: block;">−</span><span data-id="0" data-checked="true" class="rootComboTreeItemTitle" style="display: block;"><input type="checkbox">全选</span></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="1" class="comboTreeItemTitle"><input type="checkbox">GAP</span>
+                                                <ul>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="302" class="comboTreeItemTitle"><input type="checkbox">一级大区</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="2" class="comboTreeItemTitle"><input type="checkbox">GO</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="3" class="comboTreeItemTitle"><input type="checkbox">GS</span></li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="4" class="comboTreeItemTitle"><input type="checkbox">R1</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="9" class="comboTreeItemTitle"><input type="checkbox">D12</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="14" class="comboTreeItemTitle"><input type="checkbox">北京赛特奥特莱斯</span>
+                                                                                <ul>
+                                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="324" class="comboTreeItemTitle"><input type="checkbox">测试</span>
+                                                                                        <ul>
+                                                                                            <li class="ComboTreeItemChlid"> <span data-id="327" class="comboTreeItemTitle"><input type="checkbox">1</span></li>
+                                                                                            <li class="ComboTreeItemChlid"> <span data-id="331" class="comboTreeItemTitle"><input type="checkbox">6月新部门测试</span></li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="15" class="comboTreeItemTitle"><input type="checkbox">北京八达岭奥莱</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="120" class="comboTreeItemTitle"><input type="checkbox">成都华侨城(OCT)</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="315" class="comboTreeItemTitle"><input type="checkbox">D1新部门</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="316" class="comboTreeItemTitle"><input type="checkbox">ces2/28</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="10" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="16" class="comboTreeItemTitle"><input type="checkbox">北京首创奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="18" class="comboTreeItemTitle"><input type="checkbox">北京花乡奥莱</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="19" class="comboTreeItemTitle"><input type="checkbox">北京金隅嘉品店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="21" class="comboTreeItemTitle"><input type="checkbox">卓展购物中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="23" class="comboTreeItemTitle"><input type="checkbox">北京斯普瑞斯奥莱</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="25" class="comboTreeItemTitle"><input type="checkbox">北京新奥天虹工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="26" class="comboTreeItemTitle"><input type="checkbox">天津佛罗伦萨小镇</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="28" class="comboTreeItemTitle"><input type="checkbox">天津燕莎奥莱</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="30" class="comboTreeItemTitle"><input type="checkbox">天津万象城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="129" class="comboTreeItemTitle"><input type="checkbox">重庆时代天街</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="11" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="17" class="comboTreeItemTitle"><input type="checkbox">首地大峡谷购物中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="20" class="comboTreeItemTitle"><input type="checkbox">青岛万象城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="22" class="comboTreeItemTitle"><input type="checkbox">青岛海上嘉年华</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="24" class="comboTreeItemTitle"><input type="checkbox">北京大兴龙湖时代天街工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="27" class="comboTreeItemTitle"><input type="checkbox">北京万科旧宫工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="29" class="comboTreeItemTitle"><input type="checkbox">青岛CBD万达</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="31" class="comboTreeItemTitle"><input type="checkbox">济南世茂广场 </span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="32" class="comboTreeItemTitle"><input type="checkbox">济南海那奥特莱斯店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="33" class="comboTreeItemTitle"><input type="checkbox">济南首创奥特莱斯店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="12" class="comboTreeItemTitle"><input type="checkbox">D4</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="34" class="comboTreeItemTitle"><input type="checkbox">石家庄勒泰中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="35" class="comboTreeItemTitle"><input type="checkbox">石家庄北国奥莱店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="36" class="comboTreeItemTitle"><input type="checkbox">石家庄万达长安店 </span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="37" class="comboTreeItemTitle"><input type="checkbox">北京密云万象城工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="39" class="comboTreeItemTitle"><input type="checkbox">金源购物中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="41" class="comboTreeItemTitle"><input type="checkbox">北京燕莎工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="43" class="comboTreeItemTitle"><input type="checkbox">北京欧美汇店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="13" class="comboTreeItemTitle"><input type="checkbox">D5</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="38" class="comboTreeItemTitle"><input type="checkbox">沈阳赛特奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="40" class="comboTreeItemTitle"><input type="checkbox">沈阳大悦城工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="42" class="comboTreeItemTitle"><input type="checkbox">沈阳星摩尔工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="44" class="comboTreeItemTitle"><input type="checkbox">大连百威年店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="45" class="comboTreeItemTitle"><input type="checkbox">大连和平广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="46" class="comboTreeItemTitle"><input type="checkbox">大连罗斯福店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="5" class="comboTreeItemTitle"><input type="checkbox">R2</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="47" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="52" class="comboTreeItemTitle"><input type="checkbox">上海百联奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="54" class="comboTreeItemTitle"><input type="checkbox">上海西郊百联店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="55" class="comboTreeItemTitle"><input type="checkbox">上海百联嘉定店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="56" class="comboTreeItemTitle"><input type="checkbox">上海松江万达店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="57" class="comboTreeItemTitle"><input type="checkbox">上海嘉定万达店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="59" class="comboTreeItemTitle"><input type="checkbox">上海正大乐城顾村店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="61" class="comboTreeItemTitle"><input type="checkbox">上海凯鸿广场</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="48" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="64" class="comboTreeItemTitle"><input type="checkbox">上海佛罗伦萨小镇奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="66" class="comboTreeItemTitle"><input type="checkbox">上海七宝宝龙店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="68" class="comboTreeItemTitle"><input type="checkbox">上海汇智生活广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="70" class="comboTreeItemTitle"><input type="checkbox">上海世纪汇广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="72" class="comboTreeItemTitle"><input type="checkbox">上海卢湾凯德晶萃广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="74" class="comboTreeItemTitle"><input type="checkbox">昆山九方城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="76" class="comboTreeItemTitle"><input type="checkbox">昆山芭蕾雨</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="49" class="comboTreeItemTitle"><input type="checkbox">D4</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="79" class="comboTreeItemTitle"><input type="checkbox">上海百联中环店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="80" class="comboTreeItemTitle"><input type="checkbox">上海五角场万达店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="81" class="comboTreeItemTitle"><input type="checkbox">上海君欣时代广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="82" class="comboTreeItemTitle"><input type="checkbox">上海时尚中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="83" class="comboTreeItemTitle"><input type="checkbox">大华光启城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="84" class="comboTreeItemTitle"><input type="checkbox">仲盛世界商城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="85" class="comboTreeItemTitle"><input type="checkbox">虹桥天地店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="319" class="comboTreeItemTitle"><input type="checkbox">ABCD</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="6" class="comboTreeItemTitle"><input type="checkbox">R3</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="50" class="comboTreeItemTitle"><input type="checkbox">D1</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="58" class="comboTreeItemTitle"><input type="checkbox">苏州舞台奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="60" class="comboTreeItemTitle"><input type="checkbox">苏州绿宝广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="62" class="comboTreeItemTitle"><input type="checkbox">苏州新湖城市广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="63" class="comboTreeItemTitle"><input type="checkbox">常州新世界店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="65" class="comboTreeItemTitle"><input type="checkbox">常州月星</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="67" class="comboTreeItemTitle"><input type="checkbox">常州爱琴海</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="69" class="comboTreeItemTitle"><input type="checkbox">溧阳上河城店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="51" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="71" class="comboTreeItemTitle"><input type="checkbox">南京水游城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="73" class="comboTreeItemTitle"><input type="checkbox">南京东郊奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="75" class="comboTreeItemTitle"><input type="checkbox">南京百联奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="77" class="comboTreeItemTitle"><input type="checkbox">南京中海环宇城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="78" class="comboTreeItemTitle"><input type="checkbox">南京雨花客厅店</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="53" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="86" class="comboTreeItemTitle"><input type="checkbox">无锡百联奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="87" class="comboTreeItemTitle"><input type="checkbox">无锡英特宜家中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="88" class="comboTreeItemTitle"><input type="checkbox">无锡滨湖万达广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="90" class="comboTreeItemTitle"><input type="checkbox">合肥之心城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="92" class="comboTreeItemTitle"><input type="checkbox">合肥华润万象城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="94" class="comboTreeItemTitle"><input type="checkbox">合肥首创奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="95" class="comboTreeItemTitle"><input type="checkbox">宁波杉井奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="96" class="comboTreeItemTitle"><input type="checkbox">宁波来福士广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="97" class="comboTreeItemTitle"><input type="checkbox">杭州金地广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="105" class="comboTreeItemTitle"><input type="checkbox">杭州下沙奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="107" class="comboTreeItemTitle"><input type="checkbox">杭州首创奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="109" class="comboTreeItemTitle"><input type="checkbox">中大银泰城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="110" class="comboTreeItemTitle"><input type="checkbox">湖州首创奥特莱斯</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="7" class="comboTreeItemTitle"><input type="checkbox">R4</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="89" class="comboTreeItemTitle"><input type="checkbox">D1</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="98" class="comboTreeItemTitle"><input type="checkbox">长沙百联奥莱店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="99" class="comboTreeItemTitle"><input type="checkbox">长沙Lanova(乐和城)购物广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="100" class="comboTreeItemTitle"><input type="checkbox">长沙吾悦广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="101" class="comboTreeItemTitle"><input type="checkbox">长沙时代奥特莱斯店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="102" class="comboTreeItemTitle"><input type="checkbox">长沙德思勤广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="103" class="comboTreeItemTitle"><input type="checkbox">长沙世纪金源</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="104" class="comboTreeItemTitle"><input type="checkbox">厦门加州商业广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="106" class="comboTreeItemTitle"><input type="checkbox">厦门万象城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="108" class="comboTreeItemTitle"><input type="checkbox">厦门中华城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="111" class="comboTreeItemTitle"><input type="checkbox">福州金融街万达广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="112" class="comboTreeItemTitle"><input type="checkbox">福州泰禾广场</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="113" class="comboTreeItemTitle"><input type="checkbox">福州苏宁广场工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="114" class="comboTreeItemTitle"><input type="checkbox">福州天泽奥特莱斯</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="91" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="118" class="comboTreeItemTitle"><input type="checkbox">深圳大梅沙奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="119" class="comboTreeItemTitle"><input type="checkbox">西乡天虹汇一</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="121" class="comboTreeItemTitle"><input type="checkbox">深圳深业上城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="123" class="comboTreeItemTitle"><input type="checkbox">深圳8号仓</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="125" class="comboTreeItemTitle"><input type="checkbox">深圳万象汇</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="128" class="comboTreeItemTitle"><input type="checkbox">深圳龙岗万科</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="130" class="comboTreeItemTitle"><input type="checkbox">深圳星河城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="133" class="comboTreeItemTitle"><input type="checkbox">深圳海雅缤纷城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="135" class="comboTreeItemTitle"><input type="checkbox">东莞OneMall（汇一城）</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="93" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="138" class="comboTreeItemTitle"><input type="checkbox">南宁MIXC（万象城）</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="140" class="comboTreeItemTitle"><input type="checkbox">万宁首创奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="142" class="comboTreeItemTitle"><input type="checkbox">佛山岭南</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="144" class="comboTreeItemTitle"><input type="checkbox">广州佛罗伦萨小镇奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="147" class="comboTreeItemTitle"><input type="checkbox">广州岭南新世界</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="149" class="comboTreeItemTitle"><input type="checkbox">海口观澜湖新城店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="151" class="comboTreeItemTitle"><input type="checkbox">亚龙湾壹号奥特莱斯</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="8" class="comboTreeItemTitle"><input type="checkbox">R5</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="115" class="comboTreeItemTitle"><input type="checkbox">D1</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="122" class="comboTreeItemTitle"><input type="checkbox">成都锦华万达</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="124" class="comboTreeItemTitle"><input type="checkbox">昆明公园1903奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="126" class="comboTreeItemTitle"><input type="checkbox">昆明世纪金源购物中心店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="127" class="comboTreeItemTitle"><input type="checkbox">源著天街购物中心</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="273" class="comboTreeItemTitle"><input type="checkbox">Java</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="116" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="131" class="comboTreeItemTitle"><input type="checkbox">成都时代奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="132" class="comboTreeItemTitle"><input type="checkbox">成都佛罗伦萨小镇奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="134" class="comboTreeItemTitle"><input type="checkbox">成都龙泉驿万达广场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="136" class="comboTreeItemTitle"><input type="checkbox">武汉百联奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="137" class="comboTreeItemTitle"><input type="checkbox">武汉宜家荟聚店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="139" class="comboTreeItemTitle"><input type="checkbox">武汉佛罗伦萨小镇奥特莱斯</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="141" class="comboTreeItemTitle"><input type="checkbox">武汉罗马春天</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="143" class="comboTreeItemTitle"><input type="checkbox">武汉天纵城</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="117" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="145" class="comboTreeItemTitle"><input type="checkbox">西安凯德广场新地城</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="146" class="comboTreeItemTitle"><input type="checkbox">西安奥莱</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="148" class="comboTreeItemTitle"><input type="checkbox">金地广场工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="150" class="comboTreeItemTitle"><input type="checkbox">西安民乐园万达广场工厂店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="152" class="comboTreeItemTitle"><input type="checkbox">西安熙地港</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="153" class="comboTreeItemTitle"><input type="checkbox">西安赛特奥莱机场店</span></li>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="252" class="comboTreeItemTitle"><input type="checkbox">1</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="154" class="comboTreeItemTitle"><input type="checkbox">D1</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="157" class="comboTreeItemTitle"><input type="checkbox">朝阳大悦城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="158" class="comboTreeItemTitle"><input type="checkbox">英特宜家购物中心店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="159" class="comboTreeItemTitle"><input type="checkbox">王府井APM店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="160" class="comboTreeItemTitle"><input type="checkbox">蓝色港湾店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="161" class="comboTreeItemTitle"><input type="checkbox">颐堤港商业中心店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="162" class="comboTreeItemTitle"><input type="checkbox">五彩城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="163" class="comboTreeItemTitle"><input type="checkbox">凯德广场西直门店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="164" class="comboTreeItemTitle"><input type="checkbox">祥云小镇店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="165" class="comboTreeItemTitle"><input type="checkbox">侨福芳草地大厦店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="166" class="comboTreeItemTitle"><input type="checkbox">崇文门新世界店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="167" class="comboTreeItemTitle"><input type="checkbox">太阳宫店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="168" class="comboTreeItemTitle"><input type="checkbox">西单大悦城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="169" class="comboTreeItemTitle"><input type="checkbox">美美2期</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="170" class="comboTreeItemTitle"><input type="checkbox">沈阳尚柏奥特莱斯</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="246" class="comboTreeItemTitle"><input type="checkbox">测试添加部门搜索</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="155" class="comboTreeItemTitle"><input type="checkbox">D2</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="171" class="comboTreeItemTitle"><input type="checkbox">银泰湖滨二期店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="172" class="comboTreeItemTitle"><input type="checkbox">城西银泰城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="173" class="comboTreeItemTitle"><input type="checkbox">万象城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="175" class="comboTreeItemTitle"><input type="checkbox">浦东嘉里城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="177" class="comboTreeItemTitle"><input type="checkbox">月星环球港店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="180" class="comboTreeItemTitle"><input type="checkbox">南京西路863店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="183" class="comboTreeItemTitle"><input type="checkbox">百联徐汇商业广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="185" class="comboTreeItemTitle"><input type="checkbox">大悦城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="188" class="comboTreeItemTitle"><input type="checkbox">尚嘉中心店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="190" class="comboTreeItemTitle"><input type="checkbox">苏州圆融店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="192" class="comboTreeItemTitle"><input type="checkbox">南京建邺万达店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="194" class="comboTreeItemTitle"><input type="checkbox">西湖银泰童装店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="196" class="comboTreeItemTitle"><input type="checkbox">正大广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="198" class="comboTreeItemTitle"><input type="checkbox">虹口凯德龙之梦店</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="208" class="comboTreeItemTitle"><input type="checkbox">GO</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="243" class="comboTreeItemTitle"><input type="checkbox">朝阳门北大街</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="210" class="comboTreeItemTitle"><input type="checkbox">A</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="212" class="comboTreeItemTitle"><input type="checkbox">1</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="242" class="comboTreeItemTitle"><input type="checkbox">omoshiyebu</span></li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="244" class="comboTreeItemTitle"><input type="checkbox">Connie Zhu1</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="272" class="comboTreeItemTitle"><input type="checkbox">java技术栈</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="258" class="comboTreeItemTitle"><input type="checkbox">测试导出</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="259" class="comboTreeItemTitle"><input type="checkbox">测试重复主管名称</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="260" class="comboTreeItemTitle"><input type="checkbox">测试+1</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="266" class="comboTreeItemTitle"><input type="checkbox">测试+10086</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="275" class="comboTreeItemTitle"><input type="checkbox">ces1</span></li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="276" class="comboTreeItemTitle"><input type="checkbox">测试调整部门排序1</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="297" class="comboTreeItemTitle"><input type="checkbox">121 121 11</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="277" class="comboTreeItemTitle"><input type="checkbox">测试调整部门排序2</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="278" class="comboTreeItemTitle"><input type="checkbox">测试调整部门排序3</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="279" class="comboTreeItemTitle"><input type="checkbox">测试调整部门排序4</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="298" class="comboTreeItemTitle"><input type="checkbox">121 121 15</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="299" class="comboTreeItemTitle"><input type="checkbox">121 121 14</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemChlid"> <span data-id="300" class="comboTreeItemTitle"><input type="checkbox">121 121 16</span></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="301" class="comboTreeItemTitle"><input type="checkbox">R6</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="321" class="comboTreeItemTitle"><input type="checkbox">一级大区新部门</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="303" class="comboTreeItemTitle"><input type="checkbox">NO</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="326" class="comboTreeItemTitle"><input type="checkbox">NON</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="308" class="comboTreeItemTitle"><input type="checkbox">RKS</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="310" class="comboTreeItemTitle"><input type="checkbox">楠玛</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="311" class="comboTreeItemTitle"><input type="checkbox">南部</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="312" class="comboTreeItemTitle"><input type="checkbox">南笙</span></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="309" class="comboTreeItemTitle"><input type="checkbox">HAHA</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="156" class="comboTreeItemTitle"><input type="checkbox">D3</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="174" class="comboTreeItemTitle"><input type="checkbox">北城天街店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="176" class="comboTreeItemTitle"><input type="checkbox">IDMall店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="178" class="comboTreeItemTitle"><input type="checkbox">新世纪环球中心店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="179" class="comboTreeItemTitle"><input type="checkbox">金鹰购物广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="181" class="comboTreeItemTitle"><input type="checkbox">昆明广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="182" class="comboTreeItemTitle"><input type="checkbox">正佳广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="184" class="comboTreeItemTitle"><input type="checkbox">星河购物公园店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="186" class="comboTreeItemTitle"><input type="checkbox">1234Space</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="187" class="comboTreeItemTitle"><input type="checkbox">宝能店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="189" class="comboTreeItemTitle"><input type="checkbox">九方华强北店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="191" class="comboTreeItemTitle"><input type="checkbox">武汉汉街工厂店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="193" class="comboTreeItemTitle"><input type="checkbox">协信星光时代广场店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="195" class="comboTreeItemTitle"><input type="checkbox">万象城店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="197" class="comboTreeItemTitle"><input type="checkbox">爱琴海购物中心店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="199" class="comboTreeItemTitle"><input type="checkbox">番禺万达店</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="200" class="comboTreeItemTitle"><input type="checkbox">重庆U城天街</span></li>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="201" class="comboTreeItemTitle"><input type="checkbox">深圳华盛奥特莱斯</span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="307" class="comboTreeItemTitle"><input type="checkbox">NOTTER</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="304" class="comboTreeItemTitle"><input type="checkbox">D10086</span>
+                                                                        <ul>
+                                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="305" class="comboTreeItemTitle"><input type="checkbox">小红门街道</span>
+                                                                                <ul>
+                                                                                    <li class="ComboTreeItemChlid"> <span data-id="306" class="comboTreeItemTitle"><input type="checkbox">GAP成寿寺分店</span></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemChlid"> <span data-id="318" class="comboTreeItemTitle"><input type="checkbox">Li Witch</span></li>
+                                                    <li class="ComboTreeItemChlid"> <span data-id="322" class="comboTreeItemTitle"><input type="checkbox">0511部门</span></li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="328" class="comboTreeItemTitle"><input type="checkbox">新上级大区</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="329" class="comboTreeItemTitle"><input type="checkbox">下级部门2</span></li>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="330" class="comboTreeItemTitle"><input type="checkbox">下级部门1</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="332" class="comboTreeItemTitle"><input type="checkbox">0604</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="333" class="comboTreeItemTitle"><input type="checkbox">06042</span>
+                                                                <ul>
+                                                                    <li class="ComboTreeItemChlid"> <span data-id="334" class="comboTreeItemTitle"><input type="checkbox">06043</span></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="335" class="comboTreeItemTitle"><input type="checkbox">0609</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="336" class="comboTreeItemTitle"><input type="checkbox">06092</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemParent"> <span class="comboTreeParentPlus">−</span><span data-id="337" class="comboTreeItemTitle"><input type="checkbox">0612</span>
+                                                        <ul>
+                                                            <li class="ComboTreeItemChlid"> <span data-id="338" class="comboTreeItemTitle"><input type="checkbox">06122</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="ComboTreeItemChlid"> <span data-id="339" class="comboTreeItemTitle"><input type="checkbox">FESCO弹福</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="margin-right: 3px;">
+                                <select name="searchType" style="font-size: 10px;width:72px">
+                                    <option value="0">请选择类型</option>
+                                    <option value="1">登陆账号</option>
+                                    <option value="2">操作人</option>
+                                    <option value="3">部门名称</option>
+                                    <option value="4">门店号</option>
+                                </select>
+                            </li>
+                            <li style="margin-right: 3px;">
+                                <input type="text" name="search" id="keyWord" placeholder="请输关键词"> <a class="btn btn-primary btn-rounded btn-sm" onclick="serachfenRecord()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            </li>
+                            <li style="margin-right: 3px;">
+                                <a class="btn btn-warning btn-rounded btn-sm" onclick="$.table.exportExcel()"><i class="fa fa-external-link"></i>&nbsp;导出</a>
+                                <a class="btn btn-dark btn-rounded btn-sm" onclick="$.operate.exportTab('/manager/sys/export/3')"><i class="fa fa-list"></i>&nbsp;导出列表</a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12 select-table table-striped">
+                <div class="bootstrap-table">
+                    <div class="fixed-table-toolbar">
+                        <div class="bs-bars pull-left"></div>
+                        <div class="columns columns-right btn-group pull-right">
+                            <button class="btn btn-default btn-outline" type="button" name="showSearch" title="搜索"><i class="glyphicon glyphicon-search"></i></button>
+                            <button class="btn btn-default btn-outline" type="button" name="refresh" title="刷新"><i class="glyphicon glyphicon-refresh icon-refresh"></i></button>
+                            <button class="btn btn-default btn-outline" type="button" name="toggle" title="切换"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button>
+                            <div class="keep-open btn-group" title="列">
+                                <button type="button" class="btn btn-default btn-outline dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="operTime" value="0" checked="checked"> 分配时间</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="top" value="1" checked="checked"> 顶级部门</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="region" value="2" checked="checked"> 一级大区</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="plot" value="3" checked="checked"> 二级大区</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="shopNo" value="4" checked="checked"> 门店号</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="storesName" value="5" checked="checked"> 门店</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="loginAccount" value="6" checked="checked"> 登陆账号</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="oper" value="7" checked="checked"> 操作人</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="fen" value="8" checked="checked"> 分配总额</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="description" value="9" checked="checked"> 分配原因</label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" data-field="10" value="10" checked="checked"> 操作</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fixed-table-container" style="padding-bottom: 0px;">
+                        <div class="fixed-table-header" style="display: none;">
+                            <table></table>
+                        </div>
+                        <div class="fixed-table-body">
+                            <div class="fixed-table-loading" style="top: 41px; display: none;">正在努力地加载数据中，请稍候……</div>
+                        </div>
+                        <div class="fixed-table-footer" style="display: none;">
+                            <table>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table class="my_Table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">商品</th>
+                                    <th>价格(元)/数量</th>
+                                    <th>售后</th>
+                                    <th>买家/收货人</th>
+                                    <th>策划/积分类型</th>
+                                    <th>支付费用(点/元)</th>
+                                    <th>订单状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="my_sepRow">
+                                    <td colspan="9"></td>
+                                </tr>
+                            </tbody>
+                            <tbody class="my_order">
+                                <tr>
+                                    <td colspan="9" class="my_orderTit">
+                                        <span class="my_table_span1">订单号：</span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                        <span class="my_table_span1">下单时间: </span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                    </td>
+                                </tr>
+                                <tr class="my_orderDetali">
+                                    <td>
+                                        <img src="images/img1.png" alt="" class="my_orderImg">
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_goodsName">公牛BULL GN-J5C10S安卓数据线USB充电器线抗折断1米适用三星小米红米/安卓手机</a>
+                                        <p class="my_goodsNorms">1m 一体成型线</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">16.00</p>
+                                        <p class="my_table-p">1件</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">已全额退款</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_table-a">小明</a>
+                                        <p class="my_table-p">赵泽明</p>
+                                        <p class="my_table-p">13716182664</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">商城</p>
+                                        <p class="my_table-p">(商城积分)</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">支付金额 100.00元</p>
+                                        <p class="my_table-p">商城积分 100.00点</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-a">已退款</p>
+                                    </td>
+                                    <td>
+                                        <input type="button" class="my_orderDetailBtn" value="详情">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="my_sepRow">
+                                    <td colspan="9"></td>
+                                </tr>
+                            </tbody>
+                            <tbody class="my_order">
+                                <tr>
+                                    <td colspan="9" class="my_mainOrderTit">
+                                        <span class="my_table_span1">主订单：</span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="my_subOrderTit">
+                                        <span class="my_table_span1">订单号：</span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                        <span class="my_table_span1">下单时间: </span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                    </td>
+                                </tr>
+                                <tr class="my_orderDetali">
+                                    <td>
+                                        <img src="images/img1.png" alt="" class="my_orderImg">
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_goodsName">公牛BULL GN-J5C10S安卓数据线USB充电器线抗折断1米适用三星小米红米/安卓手机</a>
+                                        <p class="my_goodsNorms">1m 一体成型线</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">16.00</p>
+                                        <p class="my_table-p">1件</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">已全额退款</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_table-a">小明</a>
+                                        <p class="my_table-p">赵泽明</p>
+                                        <p class="my_table-p">13716182664</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">商城</p>
+                                        <p class="my_table-p">(商城积分)</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">支付金额 100.00元</p>
+                                        <p class="my_table-p">商城积分 100.00点</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-a">已退款</p>
+                                    </td>
+                                    <td>
+                                        <input type="button" class="my_orderDetailBtn" value="详情">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" class="my_subOrderTit">
+                                        <span class="my_table_span1">订单号：</span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                        <span class="my_table_span1">下单时间: </span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                    </td>
+                                </tr>
+                                <tr class="my_orderDetali">
+                                    <td>
+                                        <img src="images/img1.png" alt="" class="my_orderImg">
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_goodsName">公牛BULL GN-J5C10S安卓数据线USB充电器线抗折断1米适用三星小米红米/安卓手机</a>
+                                        <p class="my_goodsNorms">1m 一体成型线</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">16.00</p>
+                                        <p class="my_table-p">1件</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">已全额退款</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_table-a">小明</a>
+                                        <p class="my_table-p">赵泽明</p>
+                                        <p class="my_table-p">13716182664</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">商城</p>
+                                        <p class="my_table-p">(商城积分)</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">支付金额 100.00元</p>
+                                        <p class="my_table-p">商城积分 100.00点</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-a">已退款</p>
+                                    </td>
+                                    <td>
+                                        <input type="button" class="my_orderDetailBtn" value="详情">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="my_sepRow">
+                                    <td colspan="9"></td>
+                                </tr>
+                            </tbody>
+                            <tbody class="my_order">
+                                <tr>
+                                    <td colspan="9" class="my_orderTit">
+                                        <span class="my_table_span1">订单号：</span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                        <span class="my_table_span1">下单时间: </span>
+                                        <span class="my_table_span2">TF202004200000974822</span>
+                                    </td>
+                                </tr>
+                                <tr class="my_orderDetali">
+                                    <td>
+                                        <img src="images/img1.png" alt="" class="my_orderImg">
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_goodsName">公牛BULL GN-J5C10S安卓数据线USB充电器线抗折断1米适用三星小米红米/安卓手机</a>
+                                        <p class="my_goodsNorms">1m 一体成型线</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">16.00</p>
+                                        <p class="my_table-p">1件</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">已全额退款</p>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="my_table-a">小明</a>
+                                        <p class="my_table-p">赵泽明</p>
+                                        <p class="my_table-p">13716182664</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">商城</p>
+                                        <p class="my_table-p">(商城积分)</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-p">支付金额 100.00元</p>
+                                        <p class="my_table-p">商城积分 100.00点</p>
+                                    </td>
+                                    <td>
+                                        <p class="my_table-a">已退款</p>
+                                    </td>
+                                    <td>
+                                        <input type="button" class="my_orderDetailBtn" value="详情">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="fixed-table-pagination" style="display: block;">
+                            <div class="pull-left pagination-detail"><span class="pagination-info">第 1 到 10 条，共  1010 条记录。</span><span class="page-list"><span class="btn-group dropup"><button type="button" class="btn btn-default btn-outline dropdown-toggle" data-toggle="dropdown"><span class="page-size">10</span> <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="active"><a href="javascript:void(0)">10</a></li>
+                                    <li><a href="javascript:void(0)">25</a></li>
+                                    <li><a href="javascript:void(0)">50</a></li>
+                                </ul>
+                                </span> 条记录每页</span>
+                            </div>
+                            <div class="pull-right pagination">
+                                <ul class="pagination pagination-outline">
+                                    <li class="page-pre"><a href="javascript:void(0)">‹</a></li>
+                                    <li class="page-number active"><a href="javascript:void(0)">1</a></li>
+                                    <li class="page-number"><a href="javascript:void(0)">2</a></li>
+                                    <li class="page-number"><a href="javascript:void(0)">3</a></li>
+                                    <li class="page-number"><a href="javascript:void(0)">4</a></li>
+                                    <li class="page-number"><a href="javascript:void(0)">5</a></li>
+                                    <li class="page-last-separator disabled"><a href="javascript:void(0)">...</a></li>
+                                    <li class="page-last"><a href="javascript:void(0)">101</a></li>
+                                    <li class="page-next"><a href="javascript:void(0)">›</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="fixed-table-pagination" style="display: block;">
+                            <div class="pull-left pagination-detail"><span class="pagination-info">第 1 到 9 条，共  9 条记录。</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default btn-outline dropdown-toggle" data-toggle="dropdown"><span class="page-size">10</span> <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="active"><a href="javascript:void(0)">10</a></li>
+                                </ul>
+                                </span> 条记录每页</span>
+                            </div>
+                            <div class="pull-right pagination" style="display: none;">
+                                <ul class="pagination pagination-outline">
+                                    <li class="page-pre"><a href="javascript:void(0)">‹</a></li>
+                                    <li class="page-number active"><a href="javascript:void(0)">1</a></li>
+                                    <li class="page-next"><a href="javascript:void(0)">›</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;height: 100%;background: rgba(0,0,0,0.5);position: absolute;z-index: 900;"></div>
+    <div style="width: 1400px;height: auto;position: absolute;z-index: 999;top: 200px;left: 50%;margin-left: -700px;background: #fff;min-height: 600px;padding: 20px">
+        <div class="my_detailBox1 clearFloat">
+            <img src="images/icon1.png" alt="" class="my_detailIcon fl">
+            <div class="my_detailBox1Right fl">
+                <p class="my_detailp">订单号：<span>TF202004200000974822</span></p>
+                <div class="my_box1 clearFloat">
+                    <p class="my_detailp fl">下单时间: <span>2020-05-26 10:02:55</span></p>
+                    <p class="my_detailp fl">支付时间: <span>2020-05-26 10:02:55</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="my_detailBox2 clearFloat">
+            <div class="my_detailBox3 fl">
+                <div class="my_TitBox clearFloat">
+                    <p class="my_Tit fl">收货人信息</p>
+                    <img src="images/copy.png" alt="" class="copyIcon fl">
+                    <p class="copyBtn fl">复制</p>
+                </div>
+                <div class="my_box2 clearFloat">
+                    <p class="my_detailTit fl">收货人:</p>
+                    <p class="my_detailCon fl">刘星</p>
+                </div>
+                <div class="my_box2 clearFloat">
+                    <p class="my_detailTit fl">联系电话:</p>
+                    <p class="my_detailCon fl">13616186626</p>
+                </div>
+                <div class="my_box2 clearFloat">
+                    <p class="my_detailTit fl">收货地址:</p>
+                    <p class="my_detailCon fl">北京市北京市房山区良乡拱辰北大街45号良乡医院</p>
+                </div>
+            </div>
+            <div class="my_detailBox3 fl">
+                <div class="my_TitBox clearFloat">
+                    <p class="my_Tit fl">付款信息</p>
+                </div>
+                <div class="my_box2 clearFloat">
+                    <p class="my_detailTit fl">付款状态:</p>
+                    <p class="my_detailCon fl">待付款</p>
+                </div>
+            </div>
+            <div class="my_detailBox3 fl">
+                <div class="my_TitBox clearFloat">
+                    <p class="my_Tit fl">买家信息</p>
+                </div>
+                <div class="my_box2 clearFloat">
+                    <p class="my_detailTit fl">买家:</p>
+                    <p class="my_detailCon fl"><a href="#">17310663137</a></p>
+                </div>
+            </div>
+        </div>
+        <table class="my_table2">
+            <tr>
+                <th colspan="2">商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>支付类型</th>
+                <th>小计(元)</th>
+                <th>售后状态</th>
+                <th>发货状态</th>
+            </tr>
+            <tr class="">
+                <td>
+                    <img src="images/img1.png" alt="" class="my_orderImg">
+                </td>
+                <td>
+                    <a href="#" class="my_goodsName">公牛BULL GN-J5C10S安卓数据线USB充电器线抗折断1米适用三星小米红米/安卓手机</a>
+                    <p class="my_goodsNorms">1m 一体成型线</p>
+                </td>
+                <td>
+                    <p class="my_table-p">16.00</p>
+                </td>
+                <td>
+                    <p class="my_table-p">1件</p>
+                </td>
+                <td>
+                    <p class="my_table-p">商城</p>
+                    <p class="my_table-p">(商城积分)</p>
+                </td>
+                <td>
+                    <p class="my_table-p">支付金额 100.00元</p>
+                    <p class="my_table-p">商城积分 100.00点</p>
+                </td>
+                <td>
+                    <p class="my_table-p">已全额退款</p>
+                </td>
+                <td>
+                    <p class="my_table-a">未发货</p>
+                </td>
+            </tr>
+        </table>
+        <div class="my_detailBox4 clearFloat">
+            <div class="my_detailBox1Right fr">
+                <div class="my_box3 clearFloat">
+                    <p class="my_detailp1 fl">商品总价</p>
+                    <p class="my_detailp2 fl">￥85.00</p>
+                </div>
+                <div class="my_box3 clearFloat">
+                    <p class="my_detailp1 fl">运费</p>
+                    <p class="my_detailp2 fl">￥10.00</p>
+                </div>
+                <div class="my_box3 clearFloat">
+                    <p class="my_detailp1 fl">现金支付</p>
+                    <p class="my_detailp2 fl">￥0.00</p>
+                </div>
+                <div class="my_box3 clearFloat">
+                    <p class="my_detailp1 fl">积分支付</p>
+                    <p class="my_detailp2 fl">￥0.00</p>
+                </div>
+                <div class="my_box4 clearFloat">
+                    <p class="my_detailp3 fl">实收</p>
+                    <p class="my_detailp4 fl">￥95.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var BASE_PATH = '';
+    </script>
+    <script src="./resources/js/jquery.min.js?v=2.1.4"></script>
+    <script src="./resources/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="./resources/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="./resources/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="./resources/plugins/jquery-layout/jquery.layout-latest.js"></script>
+    <script src="./resources/plugins/zTree_v3/js/jquery.ztree.all.min.js"></script>
+    <script src="./resources/js/plugins/layer/layer.min.js"></script>
+    <script src="./resources/js/hplus.min.js?v=4.1.0"></script>
+    <script src="./resources/js/contabs.min.js"></script>
+    <script src="./resources/js/plugins/pace/pace.min.js"></script>
+    <script src="./resources/plugins/fullscreen/jquery.fullscreen.js"></script>
+    <script src="./resources/plugins/validate/jquery.validate.min.js"></script>
+    <script src="./resources/plugins/validate/messages_zh.min.js"></script>
+    <script src="./resources/plugins/validate/jquery.validate.extend.js"></script>
+    <script src="./resources/js/plugins/blockUI/jquery.blockUI.js"></script>
+    <!--表格插件-->
+    <script src="./resources/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="./resources/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="./resources/plugins/bootstrap-treetable/bootstrap-treetable.js"></script>
+    <script src="./resources/plugins/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+    <script src="./resources/plugins/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+    <script src="./resources/plugins/bootstrap-table/extensions/columns/bootstrap-table-fixed-columns.js"></script>
+    <script src="./resources/plugins/select/select2.js"></script>
+    <script src="./js/miller-ui.js"></script>
+    <script src="./js/millerutil.js"></script>
+    <script src="./resources/js/tab.js"></script>
+    <script src="./resources/plugins/comboTree/js/icontains.js"></script>
+    <script src="./resources/plugins/comboTree/js/comboTreePlugin.js"></script>
+    <script src="./resources/js/plugins/layer/My97DatePicker/WdatePicker.js"></script>
+    <script src="./resources/js/plugins/layer/My97DatePicker/index.js"></script>
+    <script>
+    var editFlag = "btn-default disabled";
+
+    //integral:fenRecord:details
+    editFlag = "btn-success";
+
+
+
+    var prefix = "/manager/integral";
+
+    $(function() {
+        var panehHidden = false;
+        if ($(this).width() < 769) {
+            panehHidden = true;
+        }
+        $('body').layout({ initClosed: panehHidden, west__size: 185 });
+        fenRecordTableList();
+    });
+
+    function fenRecordTableList() {
+        var options = {
+            url: prefix + '/releaseRecord',
+            uniqueId: "id",
+            outTheDetailsUrl: prefix + '/outTheDetails/{id}',
+            exportUrl: prefix + "/releaseRecordExport",
+            sortName: "operTime",
+            sortOrder: "desc",
+            modalName: "发放记录",
+            columns: [{
+                    field: 'operTime',
+                    title: '分配时间',
+                    //获取日期列的值进行转换
+                    formatter: function(value, row, index) {
+                        return changeDateFormat(value)
+                    }
+                },
+                {
+                    field: 'top',
+                    align: 'center',
+                    title: '顶级部门'
+                },
+                {
+                    field: 'region',
+                    align: 'center',
+                    title: '一级大区'
+                },
+                {
+                    field: 'plot',
+                    align: 'center',
+                    title: '二级大区'
+                }, {
+                    field: 'shopNo',
+                    align: 'center',
+                    title: '门店号'
+                },
+                {
+                    field: 'storesName',
+                    align: 'center',
+                    title: '门店'
+                },
+                /*{
+                                   field: 'deptName',
+                                   align: 'center',
+                                   title: '门店名称'
+                               },*/
+
+                {
+                    field: 'loginAccount',
+                    align: 'center',
+                    title: '登陆账号'
+                }, {
+                    field: 'oper',
+                    align: 'center',
+                    title: '操作人'
+                },
+                {
+                    field: 'fen',
+                    align: 'center',
+                    title: '分配总额'
+                }, {
+                    field: 'description',
+                    align: 'center',
+                    title: '分配原因'
+                    /*,
+                                        formatter:function (value, row, index) {
+                                            //处理图片
+                                            return cutString(value);
+                                        }*/
+                },
+                /*{
+                                    field: 'thumbUpCommentsOnGifts',
+                                    align: 'center',
+                                    title: '礼物/评论/点赞(总数)'
+                                },*/
+
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = []; //btn-default disabled
+                        actions.push('<a class="btn btn-xs ' + editFlag + '" href="#" onclick="$.operate.outTheDetails(\'' + row.id + '\')">详情</a> ');
+                        return actions.join('');
+                    }
+                }
+
+            ],
+        };
+        $.table.init(options);
+    }
+
+    /*选择部门列表*/
+    jQuery(document).ready(function($) {
+        $.ajax({
+            url: "/manager/sys/user/departData",
+            type: "get",
+            dataType: "json",
+            data: {},
+            success: function(result) {
+                $('#orgDept').comboTree({
+                    selectItemId: "orgDeptId",
+                    source: result,
+                    isMultiple: true,
+                    isSelectRoot: false
+                });
+            }
+        });
+
+    });
+
+
+
+    /**参数说明：
+     * 处理字符串，限制字符串长度追加换行<br>
+     * str 对象字符串
+     * 返回值： 处理结果字符串
+     */
+    function cutString(val) {
+        var str = new String(val);
+        //过滤出图片加至末尾
+        var images = str.match(/<img.*?(?:>|\/>)/gi);
+        //去除所有图片
+        str = str.replace(/<.*?>/g, "");
+        var bytesCount = 0;
+        var s = "";
+        for (var i = 0, n = str.length; i < n; i++) {
+            var c = str.charCodeAt(i);
+            //统计字符串的字符长度
+            if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                bytesCount += 1;
+            } else {
+                bytesCount += 2;
+            }
+            //换行
+            s += str.charAt(i);
+            if (bytesCount >= 40) {
+                s = s + '<br>';
+                //重置
+                bytesCount = 0;
+            }
+        }
+        if (images == null || images == '') {
+            return s;
+        } else {
+            //吧图片加至末尾
+            return s + "<br>" + images;
+        }
+
+    }
+
+    //搜索
+    function serachfenRecord() {
+        if ($("#beginTime").val() == '' && $("#endTime").val() != '') {
+            alert("请输入开始时间");
+            return;
+        } else if ($("#beginTime").val() != '' && $("#endTime").val() == '') {
+            alert("请输入结束时间");
+            return;
+        } else {
+            return $.table.search();
+        }
+        /*$("#fenRecordTable").bootstrapTable('refresh');*/
+    }
+
+    //转换日期格式(时间戳转换为datetime格式)
+    function changeDateFormat(cellval) {
+        let date = new Date(cellval);
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        month = month < 10 ? "0" + month : month;
+        day = day < 10 ? "0" + day : day;
+        date = year + '-' + month + '-' + day;
+        console.log(date); // 2018-10-09
+        return date;
+    }
+
+
+    function excelExportnew() {
+        if ($("#beginTime").val() == '' && $("#endTime").val() != '') {
+            alert("请输入开始时间");
+            return;
+        } else if ($("#beginTime").val() != '' && $("#endTime").val() == '') {
+            alert("请输入结束时间");
+            return;
+        }
+        $.table.exportExcel();
+    }
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+    })
+    </script>
+</body>
+
+</html>

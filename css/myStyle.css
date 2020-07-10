@@ -1,0 +1,271 @@
+@charset "UTF-8";
+.my_Table{
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+}
+.my_Table td{
+	/* border-bottom: 1px solid #fff!important; */
+}
+.my_Table thead tr th{
+	height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #EFF3F8;
+    font-weight: 400;
+    border: none;
+}
+.my_Table thead tr th:first-child{
+	text-align: left;
+	padding-left: 20px;
+}
+.my_Table .my_sepRow td{
+	height: 11px;
+}
+.my_orderTit{
+	height: 30px;
+	line-height: 30px;
+	background: #F5F5F5;
+	padding-left: 20px;
+}
+.my_table_span2{
+	margin-right: 20px;
+}
+.my_orderImg{
+	width: 40px;
+	height: 40px;
+}
+.my_goodsName{
+	display: inline-block;
+	max-width: 150px;
+}
+.my_Table .my_orderDetali td{
+	text-align: center;
+	border: none;
+	padding: 10px 0;
+}
+.my_Table .my_orderDetali td:nth-child(2){
+	text-align: left;
+	padding-left: 30px;
+}
+.my_table-p{
+	margin: 0;
+}
+.my_orderDetali{
+	border-bottom: 1px solid #E8EBED;
+	/* border-left: 1px solid #E8EBED;
+	border-right: 1px solid #E8EBED; */
+}
+.my_order{
+	border-top: 1px solid #E8EBED;
+	border-left: 1px solid #E8EBED;
+	border-right: 1px solid #E8EBED;
+}
+
+.my_orderDetailBtn{
+	font-size: 12px;
+	color: #fff;
+	line-height: 24px;
+	background: #3685C8;
+	padding: 0 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px
+}
+.my_subOrderTit {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+}
+.my_mainOrderTit{
+	height: 40px;
+    line-height: 40px;
+    background: #F5F5F5;
+    padding-left: 20px;
+}
+.clearFloat:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden
+}
+
+.clearFloat {
+    zoom: 1
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.my_detailBox1{
+	width: 100%;
+	height: auto;
+	border: 1px solid #F5F5F5;
+	border-radius: 4px;
+	padding: 15px 20px 20px 20px;
+}
+.my_detailBox1Right{
+	margin-left: 10px;
+	padding-top: 10px;
+}
+.my_detailp{
+	font-size: 12px;
+	color: #333;
+	line-height: 12px;
+	margin: 0 70px 0 0;
+}
+.my_box1{
+	margin-top: 15px;
+}
+.my_detailBox2{
+	width: 100%;
+	height: auto;
+	border: 1px solid #F5F5F5;
+	border-radius: 4px;
+	padding: 15px 20px 20px 20px;
+	background: #FBFBFB;
+	margin-top: 10px;
+}
+.my_detailBox3{
+	width: 33%;
+}
+.my_TitBox{
+
+}
+.my_Tit{
+	font-size: 12px;
+	color: #333;
+	line-height: 12px;
+	margin: 0;
+	font-weight: bold;
+}
+.copyIcon{
+	display: block;
+	margin-left: 10px;
+	width: 12px;
+	height: 12px;
+}
+.copyBtn{
+	color: #337ab7;
+	font-size: 12px;
+	line-height: 12px;
+	margin: 0 0 0 5px;
+	cursor: pointer;
+}
+.my_box2{
+	margin: 15px 0 0 0;
+}
+.my_detailTit{
+	font-size: 12px;
+	color: #333;
+	line-height: 16px;
+	margin: 0;
+	width: 60px;
+}
+.my_detailCon{
+	font-size: 12px;
+	color: #333;
+	line-height: 16px;
+	margin: 0;
+	max-width: calc(100% - 80px);
+}
+.my_table2{
+	width: 100%;
+	margin: 10px 0 0 0;
+	font-size: 12px;
+	color: #333;
+	border: 1px solid #F5F5F5;
+}
+.my_table2 th{
+	font-weight: bold;
+	background: #FBFBFB;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #F5F5F5;
+	text-align: center;
+}
+.my_table2 th:first-child{
+	text-align: left;
+	padding-left: 20px;
+}
+.my_table2 td{
+	text-align: center;
+	padding: 10px 0;
+}
+.my_table2 td:nth-child(2) {
+    text-align: left;
+    padding-left: 30px;
+}
+.my_detailBox4{
+	width: 100%;
+	height: auto;
+	background: #FBFBFB;
+	border: 1px solid #F5F5F5;
+	margin-top: 10px;
+}
+.my_detailBox1Right{
+	margin-right: 30px;
+}
+.my_box3{
+	margin-top: 2px;
+}
+.my_detailp1{
+	width: 70px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #333;
+	text-align: right;
+}
+.my_detailp2{
+	font-size: 12px;
+	line-height: 16px;
+	color: #333;
+	margin-left: 50px;
+}
+.my_detailp3{
+	width: 70px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #333;
+	text-align: right;
+	font-weight: bold;
+}
+.my_detailp4{
+	font-size: 12px;
+	line-height: 16px;
+	color: #333;
+	margin-left: 50px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.my_box4{
+	margin-top: 10px;
+}
+
+.table{
+	border-bottom: none!important;
+}
+.my_subOrderTitTr{
+	/* border-left: 1px solid #E8EBED;
+	border-right: 1px solid #E8EBED; */
+	border-bottom: 1px solid #E8EBED;
+}
+.my_mainOrderTitTr{
+	border: 1px solid #E8EBED;
+}
+.border1{
+	border: 1px solid #E8EBED;
+	border-bottom: none;
+}
+.border2{
+	border-left: 1px solid #E8EBED;
+	border-right: 1px solid #E8EBED;
+}
+.table1{
+	width: 100%;
+}
